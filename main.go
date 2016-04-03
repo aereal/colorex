@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"flag"
-	"fmt"
 	"os"
 	"regexp"
 	"strings"
@@ -33,7 +32,7 @@ func main() {
 
 		for _, colorizer := range colorizers {
 			if colorizer.Pattern.MatchString(line) {
-				line = colorize(line, colorizer.Color)
+				line = colorizer.Color.Colorize(line)
 				break
 			}
 		}
@@ -57,13 +56,4 @@ func buildColorizers(args []string) []Colorizer {
 	}
 
 	return colorizers
-}
-
-func colorize(msg string, color Color) string {
-	if color.Code == ColorDefault.Code {
-		return msg
-	}
-
-	attr := 0
-	return fmt.Sprintf("\033[%d;%dm%s\033[0m", attr, color.Code, msg)
 }

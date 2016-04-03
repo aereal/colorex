@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"regexp"
 )
 
@@ -22,3 +23,12 @@ var (
 	ColorMagenta       = Color{35}
 	ColorCyan          = Color{36}
 )
+
+func (c *Color) Colorize(msg string) string {
+	if c.Code == ColorDefault.Code {
+		return msg
+	}
+
+	attr := 0
+	return fmt.Sprintf("\033[%d;%dm%s\033[0m", attr, c.Code, msg)
+}
