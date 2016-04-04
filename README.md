@@ -1,6 +1,6 @@
 # colorex
 
-colorex is ...
+colorex (colorize + regular expression) colorize input lines that match given patterns.
 
 ## Usage
 
