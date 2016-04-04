@@ -5,6 +5,8 @@ import (
 	"regexp"
 )
 
+// Originally from https://github.com/mitchellh/cli/blob/master/ui_colored.go
+
 type Colorizer struct {
 	Pattern *regexp.Regexp
 	Color   Color
