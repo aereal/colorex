@@ -16,6 +16,7 @@ var colorByName = map[string]Color{
 	"blue":    ColorBlue,
 	"magenta": ColorMagenta,
 	"cyan":    ColorCyan,
+    "white":   ColorWhite,
 }
 
 // colorex [COLOR:PATTERN, ...]
