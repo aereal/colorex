@@ -24,6 +24,8 @@ var (
 	ColorBlue          = Color{34}
 	ColorMagenta       = Color{35}
 	ColorCyan          = Color{36}
+    ColorWhite         = Color{37}
+    ColorGrey          = Color{90}
 )
 
 func (c *Color) Colorize(msg string) string {
